@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainConstraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/AppTheme"
+        app:titleTextColor="#ffffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <ScrollView
+        android:id="@+id/scrollViewDashBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradientbackground">
+
+            <ImageView
+                android:id="@+id/iconProfile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/baseline_face_white_18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtUserInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="intentLogin"
+                android:text="@string/label_dashboard_login"
+                android:textColor="@color/colorFontWhite"
+                app:layout_constraintEnd_toStartOf="@+id/txtLogout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/iconProfile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintMenus"
+                android:layout_width="340dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/main_menu_radius"
+                android:elevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.520"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iconProfile">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!--Row 1-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!--Column 1-->
+                        <android.support.v7.widget.CardView
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:onClick="intentLocalExperience">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/cerclebackgroundyellow"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_motorcycle_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/label_local_experience"
+                                    android:textAlignment="center"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <!--Column 2-->
+                        <android.support.v7.widget.CardView
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:elevation="8dp"
+                            android:onClick="intentFavoriteFood"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/cerclebackgroundpurple"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_restaurant_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/label_favorite_food"
+                                    android:textAlignment="center"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                        <!--Column 3-->
+                        <android.support.v7.widget.CardView
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:elevation="8dp"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:onClick="intentRecreation"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/cerclebackgroundred"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_landscape_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/label_recreation"
+                                    android:textAlignment="center"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+                    <!--Row 2-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!--Column 1-->
+                        <android.support.v7.widget.CardView
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:elevation="8dp"
+                            android:onClick="intentTraditionalAcitivity"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/baseline_calendar_today_black_18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/label_traditional_activity"
+                                    android:textAlignment="center"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                        <!--Column 2-->
+                        <android.support.v7.widget.CardView
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:elevation="8dp"
+                            android:onClick="intentLocalSouvenir"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/cerclebackgroundgreen"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_card_giftcard_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/label_local_souvenir"
+                                    android:textAlignment="center"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                        <!--Column 3-->
+                        <android.support.v7.widget.CardView
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:elevation="8dp"
+                            android:onClick="intentGuesthouse"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/cercle_background_bluegrey"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_hotel_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/label_guest_house"
+                                    android:textAlignment="center"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <!--Ongoing promos-->
+            <!--https://www.youtube.com/watch?v=94rCjYxvzEE-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/viewOnGoing"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintMenus">
+
+                <TextView
+                    android:id="@+id/txtOnGoing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/label_dashboard_thailand"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewDashboardSlide"
+                    android:layout_width="match_parent"
+                    android:layout_height="156dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtOnGoing">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <!--Thailand's top stay-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/viewPromo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewOnGoing">
+
+                <TextView
+                    android:id="@+id/txtPromo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/label_dashboard_ongoing"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewDashboardSlidePromo"
+                    android:layout_width="match_parent"
+                    android:layout_height="156dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPromo"
+                    app:layout_constraintVertical_bias="0.281"></android.support.v7.widget.RecyclerView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/label_logout"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/label_owner"
+                app:layout_constraintEnd_toStartOf="@+id/txtLogout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/iconProfile"
+                app:layout_constraintTop_toBottomOf="@+id/txtUserInfo" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocalExperienceActivity.LocalExperience">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewCity"
+        android:onClick="intentToSubmenus"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintVertical_weight="1"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        android:layout_width="340dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewOldTown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:src="@drawable/cnx_city"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_city"
+            android:textColor="@color/colorFontWhite"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewOldTown"
+        android:onClick="intentToSubmenus"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_width="340dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewVicinity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCity" >
+
+        <ImageView
+            android:src="@drawable/cnx_old_town_shutterstock"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_oldtown"
+            android:textColor="@color/colorFontWhite"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewVicinity"
+        android:background="@drawable/cnx_vicinity"
+        android:onClick="intentToSubmenus"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_width="340dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewOldTown" >
+
+        <ImageView
+            android:src="@drawable/cnx_vicinity"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_vicinity"
+            android:textColor="@color/colorFontWhite"/>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

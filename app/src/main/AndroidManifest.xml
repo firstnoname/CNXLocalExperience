@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ifirst.cnxlocalexperience">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_app_cnx"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LocalExperienceActivity.LocalExperience"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".LocalExperienceActivity.LocalExperienceCity" />
+        <activity android:name=".LocalExperienceActivity.LocalExperienceDetail" />
+        <activity android:name=".LocalExperienceActivity.LocalExperienceOldTown" />
+        <activity android:name=".LocalExperienceActivity.LocalExperienceVicinity" />
+        <activity android:name=".RecreationActivity.RecreationActivity" />
+        <activity android:name=".FavoriteFoodActivity.FavoriteFoodActivity" />
+        <activity android:name=".LocalSouvenirActivity.LocalSouvenirActivity" />
+        <activity android:name=".FullScreenActivity" />
+        <activity android:name=".UserManager.LoginActivity" />
+        <activity android:name=".UserManager.RegisterActivity" />
+        <activity android:name=".GuestHouseActivity.GuestHouseActivity" />
+        <activity android:name=".GuestHouseActivity.GuesthouseDetailActivity" />
+        <activity android:name=".Promotion.PromotionDetail" />
+        <activity android:name=".Promotion.UsingPromotion" />
+        <activity android:name=".TraditionalActivity.TraditionalActivity" />
+        <activity android:name=".TraditionalActivity.TraditionalActivityList" />
+        <activity android:name=".TraditionalActivity.TraditionalActivityDetail"></activity>
+    </application>
+
+</manifest>

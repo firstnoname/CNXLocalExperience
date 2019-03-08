@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_default"
+        android:icon="@drawable/ic_united_states_of_america_flag_round_64"
+        android:title="Language"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/actoin_ch"
+        android:icon="@drawable/ic_china_flag_round_medium"
+        android:title="China"
+        app:showAsAction="ifRoom" />
+</menu>

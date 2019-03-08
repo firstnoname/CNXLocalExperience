@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">CNX Local Experience</string>
+
+    <!--Dashboard-->
+    <string name="label_dashboard_login">Please Login or Register!</string>
+    <string name="label_logout">Logout</string>
+
+    <string name="label_dashboard_ongoing">Ongoing Promos ></string>
+    <string name="label_dashboard_thailand">Thailand\'s Top Suggestion ></string>
+
+    <string name="label_local_experience">Local Experience</string>
+    <string name="label_local_souvenir">Local Souvenir</string>
+    <string name="label_traditional_activity">Traditional Activity</string>
+    <string name="label_guest_house">Guest House</string>
+    <string name="label_favorite_food">Favorite Food</string>
+    <string name="label_recreation">Recreation</string>
+
+    <!--Login & Register-->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_name">Your name</string>
+    <string name="hint_tel">Your phone number</string>
+    <string name="hint_register">Register here</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+
+    <!--Local Experience-->
+    <string name="label_city">City</string>
+    <string name="label_oldtown">Old Town</string>
+    <string name="label_vicinity">Vicinity</string>
+    <string name="label_company_name_eng">Name :</string>
+    <string name="label_price">Price :</string>
+    <string name="label_tel">Call :</string>
+    <string name="lable_car_park">Parking :</string>
+    <string name="label_address">Address :</string>
+    <string name="label_website">Website :</string>
+    <string name="label_time">Time :</string>
+
+    <!--Promotion-->
+    <string name="btn_show_code">Show code</string>
+
+    <!--Owner-->
+    <string name="hint_promo_code">Fill the code here !</string>
+    <string name="hint_promo_user">Fill the username here !</string>
+    <string name="hint_promo_owner">Fill the owner name here !</string>
+    <string name="btn_save_promo">Save</string>
+    <string name="label_owner">Owner click here</string>
+    
+    <!--Traditional-->
+    <string name="label_jan">January</string>
+    <string name="label_feb">February</string>
+    <string name="label_mar">March</string>
+    <string name="label_april">April</string>
+    <string name="label_may">May</string>
+    <string name="label_june">June</string>
+    <string name="label_july">July</string>
+    <string name="label_august">August</string>
+    <string name="label_sept">September</string>
+    <string name="label_oct">October</string>
+    <string name="label_nov">November</string>
+    <string name="label_dec">December</string>
+    
+    <!--Guest house-->
+    <string name="label_address_gh">Address : </string>
+    <string name="label_price_gh">Price : </string>
+    <string name="label_neighborhood">Neighborhood : </string>
+    <string name="label_breakfast">Breakfast : </string>
+    <string name="label_airport">Airport : </string>
+    <string name="label_public_transportation">Public transportation : </string>
+    <string name="label_shopping">Shopping : </string>
+    <string name="label_hospital">Hospital : </string>
+    <string name="label_convenience_store">Convenience store : </string>
+    <string name="label_cash_withdrawal">"Cash withdrawal : "</string>
+    <string name="label_thai_cuisine">Thai cuisine : </string>
+    <string name="label_asian_cuisine">Asian cuisine : </string>
+    <string name="label_cafe">Cafe : </string>
+    <string name="label_language">Language : </string>
+    <string name="label_internet_access">Internet access : </string>
+    <string name="label_thing_todo">Things todo : </string>
+    <string name="label_dining">Dining : </string>
+    <string name="label_services">Services : </string>
+    <string name="label_access">Access : </string>
+    <string name="label_getting_around">Getting around : </string>
+    <string name="label_most_popular">Most popular : </string>
+    <string name="label_closest_landmark">Closest landmark : </string>
+    <string name="label_children_extra">Children extra : </string>
+    <string name="label_other">Other : </string>
+    <string name="label_website_gh">Website : </string>
+</resources>

@@ -1,5 +1,6 @@
 package com.example.ifirst.cnxlocalexperience;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -366,13 +368,15 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_default:
 //                Toast.makeText(this, "Default", Toast.LENGTH_SHORT).show();
-                setLocale("en");
+//                setLocale("en");
+                changeLanguage("en");
                 recreate();
                 return true;
 
             case R.id.actoin_ch:
 //                Toast.makeText(this, "Chinese", Toast.LENGTH_SHORT).show();
-                setLocale("zh");
+//                setLocale("zh");
+                changeLanguage("zh");
                 recreate();
                 return true;
 
@@ -397,6 +401,50 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("My_lang", lang);
         editor.apply();
     }
+
+    public void changeLanguage(String lang) {
+//        Log.d("ChangeLang", lang);
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_lang", lang);
+        editor.apply();
+
+        updateBaseContextLocale(this, lang);
+    }
+
+    protected Context updateBaseContextLocale(Context context, String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return updateResourcesLocale(context, locale);
+        }
+
+        return updateResourcesLocaleLegacy(context, locale);
+    }
+
+    @TargetApi(Build.VERSION_CODES.N)
+    private Context updateResourcesLocale(Context context, Locale locale) {
+        Configuration conf = context.getResources().getConfiguration();
+        conf.setLocale(locale);
+        Resources res = context.getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration configuration = res.getConfiguration();
+        configuration.locale = locale;
+        res.updateConfiguration(configuration, dm);
+
+        return context.createConfigurationContext(conf);
+    }
+
+    @SuppressWarnings("deprecation")
+    private Context updateResourcesLocaleLegacy(Context context, Locale locale) {
+        Resources resources = context.getResources();
+        Configuration configuration = resources.getConfiguration();
+        configuration.locale = locale;
+        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+
+        return context;
+    }
+
 
     private void testSetLocaleUpdate(String lang) {
         Locale locale = new Locale(lang);
@@ -425,7 +473,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         language = prefs.getString("My_lang", "");
 //        Log.d("language", language);
-        setLocale(language);
+//        setLocale(language);
+        changeLanguage(language);
     }
 
     private void initRecyclerView(){
